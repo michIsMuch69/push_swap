@@ -36,6 +36,7 @@ void treat_args(int argc, char* argv[])
     Node    *head;       // Tête de la liste chaînée
     Node    *current;    // Pointeur pour parcourir la liste
     int     i;
+    int     arg_as_int;
 
     head = NULL;         // Initialisation de la liste vide
     i = 1;
@@ -43,7 +44,7 @@ void treat_args(int argc, char* argv[])
     // Parcours des arguments passés au programme
     while (i < argc) 
     {
-        int arg_as_int = atoi(argv[i]);  // Convertir l'argument en entier
+        arg_as_int = atoi(argv[i]);  // Convertir l'argument en entier
         addNode(&head, arg_as_int);      // Ajout de l'entier à la liste chaînée
         i++;
     }
