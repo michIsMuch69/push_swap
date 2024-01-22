@@ -12,12 +12,12 @@ t_list  *ft_lstnew(void *content)
     return (list);
 }
 
-int main(void)
-{
-    int value = 5;
-    t_list *myList = ft_lstnew(&value); // Passez l'adresse de la variable int
+// int main(void)
+// {
+//     int value = 5;
+//     t_list *myList = ft_lstnew(&value); // Passez l'adresse de la variable int
 
-    printf("%d\n", *((int*)myList->content)); // Utilisez le cast uniquement pour l'impression
+//     printf("%d\n", *((int*)myList->content)); // Utilisez le cast uniquement pour l'impression
 
-    return (0);
-}
+//     return (0);
+// }
