@@ -1,70 +1,67 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   treat_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 08:00:32 by jedusser          #+#    #+#             */
+/*   Updated: 2024/01/23 14:10:28 by jedusser         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-typedef struct Node {
-    void* data;
-    struct Node* next;
-} Node;
-
-void addNode(Node** head, int data) 
+void	add_node(t_node **head, int data)
 {
-    Node* newNode;
-    Node* current;
-    newNode = malloc(sizeof(Node));
-    newNode->data = malloc(sizeof(int));
-    *((int *)newNode->data) = data;
-    newNode->next = NULL;
+	t_node	*newnode;
+	t_node	*current;
 
-    if (*head == NULL) 
-        *head = newNode;
-    else 
-    {
-        current = *head;
-        while (current->next != NULL) 
-        {
-            current = current->next;
-        }
-        current->next = newNode;
-    }
+	newnode = malloc(sizeof(t_node));
+	newnode->data = malloc(sizeof(int));
+	*((int *)newnode->data) = data;
+	newnode->next = NULL;
+	if (*head == NULL)
+		*head = newnode;
+	else
+	{
+		current = *head;
+		while (current->next != NULL)
+		{
+			current = current->next;
+		}
+		current->next = newnode;
+	}
 }
 
-void treat_args(int argc, char **argv) 
+void	fill_args(int argc, char **argv)
 {
-    Node    *head; 
-    Node    *current;
-    int     i;
-    int     arg_as_int;
+	t_node	*head;
+	t_node	*temp;
+	t_node	*current;
+	int		i;
+	int		arg_as_int;
 
-    head = NULL;
-    i = 1;
-
-    while (i < argc) 
-    {
-        arg_as_int = atoi(argv[i]);
-        addNode(&head, arg_as_int);
-        i++;
-    }
-
-    current = head;
-
-    while (current != NULL) 
-    {
-        printf("%d\n", *((int *)current->data));
-        current = current->next;
-    }
-
-    while (head != NULL) 
-    {
-        Node* temp = head;
-        head = head->next;
-        free(temp->data);
-        free(temp);
-    }
-}
-
-int main(int argc, char **argv)
-{
-    treat_args(argc, argv);
-    return (0);
+	head = NULL;
+	i = 1;
+	while (i < argc)
+	{
+		arg_as_int = ft_atoi(argv[i]);
+		//test int min max grace a atoi en long long
+		add_node(&head, arg_as_int);
+		i++;
+	}
+	current = head;
+	while (current != NULL)
+	{
+		printf("%d\n",*current->data);
+		current = current->next;
+	}
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp->data);
+		free(temp);
+	}
 }
