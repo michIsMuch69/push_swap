@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 15:45:48 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:05:14 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			new_value = atoi(argv[i]);
-			new_node = ft_lstnew(new_value);
+			new_node = ft_lstnew(new_value); //atoi(argv[i]) en paramettrede lstnew ?// conditionner lstnew au retour de l'atoi
 			ft_lstadd_back(&stack, new_node);
 			i++;
 		}
 	}
+	// if (!stack)--_> lstnew
+	//	else --? lstaddback
 	print_stack(stack);
 	free(new_node);
 	free(stack);
