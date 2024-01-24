@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/jedusser/Documents/GH_push_swap",
-      "program": "/home/jedusser/Documents/GH_push_swap/build/Debug/outDebug",
+      "cwd": "/home/jedusser/Documents/gh_push_swap",
+      "program": "/home/jedusser/Documents/gh_push_swap/a.out",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

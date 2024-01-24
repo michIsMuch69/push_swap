@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 10:01:40 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:06:15 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-typedef struct node
-{
-	int 		*content;
-	struct node *next;
-}	t_node;
 
-typedef struct stack
+typedef struct s_list
 {
-	t_node *top;
-}	t_stack;
+	int	content;
+	struct s_list *next;
+	struct s_list *previous;
+	
+}	t_list;
 
-void	*init_stack();
+t_list	*ft_lstnew(int content);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+int	ft_atoi(const char *str);
+void fill_stack(int argc, char **argv, t_list **lst);
 
 #endif
