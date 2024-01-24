@@ -6,15 +6,16 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 15:22:10 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:26:04 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
 int main(int argc, char **argv)
 {
-    t_list *stack = NULL; // Initialisation de la liste chaînée
+    t_list *stack = NULL; 
 	int	i;
 
 	i = 1;
