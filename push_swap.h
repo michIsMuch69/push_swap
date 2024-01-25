@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:20:12 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:57 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 void		fill_stack(int argc, char **argv, t_list **lst);
 t_list		*ft_lstnew(int content);
 t_list		*ft_lstlast(t_list *lst);
-long long	ft_atoi(const char *str);
+int			ft_atoi(const char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:18:07 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:30:29 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:45:40 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_is_signeddigit(char c)
 	return (0);
 }
 
-long long	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int					i;
 	long long			res;
@@ -45,5 +45,5 @@ long long	ft_atoi(const char *str)
 	res = sign * res;
 	if (res > 2147483647 || res < -2147483648)
 		return (-1);
-	return ((int)sign * res);
+	return ((int)res);
 }

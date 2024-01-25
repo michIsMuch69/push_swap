@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:12:10 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:41:04 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	swap(t_list **stack, char stack_name)
 	first->next = second->next;
 	second->next = first;
 	*stack = second;
+	
 	if (stack_name == 'a')
 		printf("sa\n");
 	else if (stack_name == 'b')
