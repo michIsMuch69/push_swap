@@ -6,12 +6,13 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 15:38:06 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:34:15 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "push_swap.h"
 
-// void push(t_list *from_stack, t_list *to_stack)
-// {
-// }
+void push(t_list *from_stack, t_list *to_stack)
+{
+	
+}

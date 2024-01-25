@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 11:50:22 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:37:17 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ long long	ft_atoi(const char *str);
 void		fill_stack(int argc, char **argv, t_list **lst);
 int			check_args(int argc, char **argv);
 int			ft_is_signeddigit(char c);
-void 		print_error(int argc, char **argv);
+void		print_error(int argc, char **argv);
+void		free_list(t_list *stack);
 
 #endif

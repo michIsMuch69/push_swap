@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:42:40 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 15:37:40 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:39:13 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,19 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		tmp->next = new;
+	}
+}
+
+void	free_list(t_list *stack)
+{
+	t_list	*current;
+	t_list	*next;
+
+	current = stack;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
 	}
 }

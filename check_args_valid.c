@@ -6,19 +6,19 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:23:54 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 12:31:08 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:41:36 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int check_args(int argc, char **argv)
+int	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	if(argc == 1)
+	if (argc == 1)
 		return (1);
 	if (argc > 1)
 	{
@@ -27,20 +27,21 @@ int check_args(int argc, char **argv)
 			j = 0;
 			while (argv[i][j] != '\0')
 			{
-				if(ft_is_signeddigit(argv[i][j]) == 0 || ft_atoi(argv[i]) == 1)
+				if (ft_is_signeddigit(argv[i][j]) == 0 || ft_atoi(argv[i]) == 1)
 					return (1);
 				j++;
-			}	
+			}
 			i++;
 		}
 	}
-	return(0);
+	return (0);
 }
-void print_error(int argc, char **argv)
+
+void	print_error(int argc, char **argv)
 {
-	if (check_args(argc,argv) == 1)
+	if (check_args(argc, argv) == 1)
 	{
 		write(2, "Error\n", 6);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 }
