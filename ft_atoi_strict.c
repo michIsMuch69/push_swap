@@ -6,17 +6,17 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 14:49:30 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 14:49:47 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:21:22 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	int	i;
-	int	res;
-	int	sign;
+	int					i;
+	long long			res;
+	int					sign;
 
 	i = 0;
 	res = 0;
@@ -35,5 +35,8 @@ int	ft_atoi(const char *str)
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	return (sign * res);
+	res = sign * res;
+	if (res > 2147483647 || res < -2147483648)
+		return(1);
+	return ((int)sign * res);
 }

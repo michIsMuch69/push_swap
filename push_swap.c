@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/24 16:05:14 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 12:27:54 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,37 @@ void	print_stack(t_list *stack)
 	current = stack;
 	while (current != NULL)
 	{
-		printf("%d", current->content);
+		printf("%d\n", current->content);
 		current = current->next;
 	}
-	printf("\n");
 }
-
-int	main(int argc, char **argv)
+void	fill_stack(int argc, char **argv, t_list **stack)
 {
-	t_list	*stack;
-	t_list	*new_node;
 	int		i;
 	int		new_value;
+	t_list	*new_node;
 
-	stack = NULL;
 	i = 1;
 	if (argc > 1)
 	{
 		while (i < argc)
 		{
-			new_value = atoi(argv[i]);
+			new_value = ft_atoi(argv[i]);
 			new_node = ft_lstnew(new_value); //atoi(argv[i]) en paramettrede lstnew ?// conditionner lstnew au retour de l'atoi
-			ft_lstadd_back(&stack, new_node);
+			ft_lstadd_back(stack, new_node);
 			i++;
 		}
 	}
-	// if (!stack)--_> lstnew
-	//	else --? lstaddback
+}
+int	main(int argc, char **argv)
+{
+	t_list	*stack;
+	
+	stack = NULL;
+	print_error(argc, argv);
+	fill_stack(argc, argv, &stack);	
 	print_stack(stack);
-	free(new_node);
+	//dellist pour free correctement.
 	free(stack);
 	return (0);
 }
