@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:18:07 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 13:42:02 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:02:17 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ long long	ft_atoi(const char *str)
 	}
 	res = sign * res;
 	if (res > 2147483647 || res < -2147483648)
-		return (1);
+		return (-1);
 	return ((int)sign * res);
 }

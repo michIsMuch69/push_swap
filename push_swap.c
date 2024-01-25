@@ -6,17 +6,17 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 13:38:09 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:52:22 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_list *stack)
+void	print_stack(t_list *stack_a)
 {
 	t_list	*current;
 
-	current = stack;
+	current = stack_a;
 	while (current != NULL)
 	{
 		printf("%d\n", current->content);
@@ -24,7 +24,7 @@ void	print_stack(t_list *stack)
 	}
 }
 
-void	fill_stack(int argc, char **argv, t_list **stack)
+void	fill_stack(int argc, char **argv, t_list **stack_a)
 {
 	int		i;
 	int		new_value;
@@ -39,10 +39,10 @@ void	fill_stack(int argc, char **argv, t_list **stack)
 			new_node = ft_lstnew(new_value);
 			if (!new_node)
 			{
-				free_list(*stack);
+				free_list(*stack_a);
 				exit (EXIT_FAILURE);
 			}
-			ft_lstadd_back(stack, new_node);
+			ft_lstadd_back(stack_a, new_node);
 			i++;
 		}
 	}
@@ -50,12 +50,14 @@ void	fill_stack(int argc, char **argv, t_list **stack)
 
 int	main(int argc, char **argv)
 {
-	t_list	*stack;
+	t_list	*stack_a;
 
-	stack = NULL;
+	stack_a = NULL;
 	print_error(argc, argv);
-	fill_stack(argc, argv, &stack);
-	print_stack(stack);
-	free_list(stack);
+	fill_stack(argc, argv, &stack_a);
+	swap(&stack_a, 'a');
+	print_stack(stack_a);
+	free_list(stack_a);
+	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 13:37:17 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:02:02 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ int			check_args(int argc, char **argv);
 int			ft_is_signeddigit(char c);
 void		print_error(int argc, char **argv);
 void		free_list(t_list *stack);
+int			swap(t_list **stack, char stack_name);
+
 
 #endif
