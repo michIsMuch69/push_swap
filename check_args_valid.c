@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:23:54 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:08:29 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:30:38 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
+	long long a;
 
 	i = 1;
 	if (argc == 1)
@@ -27,7 +28,9 @@ int	check_args(int argc, char **argv)
 			j = 0;
 			while (argv[i][j] != '\0')
 			{
-				if (ft_is_signeddigit(argv[i][j]) == 0 || ft_atoi(argv[i]) == -1)
+				if (ft_is_signeddigit(argv[i][j]) == 0)
+					return (1);
+				if (ft_atoi(argv[i]) == -1)
 					return (1);
 				j++;
 			}

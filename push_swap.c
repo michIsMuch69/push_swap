@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 14:52:22 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:31:18 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,5 @@ int	main(int argc, char **argv)
 	swap(&stack_a, 'a');
 	print_stack(stack_a);
 	free_list(stack_a);
-	
 	return (0);
 }
