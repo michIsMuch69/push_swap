@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:48:10 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/27 12:11:47 by jean-michel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,18 @@ void	fill_stack(int argc, char **argv, t_list **stack_a)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
-
+	t_list  *stack_b;
 	stack_a = NULL;
+	stack_b = NULL;
 	print_error(argc, argv);
 	fill_stack(argc, argv, &stack_a);
 	//swap(&stack_a, 'a');
+	//push(&stack_a, &stack_b, 'b');
+	rotate(&stack_a, 'a');
+	printf("%s\n", "StackA");
 	print_stack(stack_a);
+	printf("%s\n", "StackB");
+	print_stack(stack_b);
 	//printf("%d\n", stack_a->content + stack_a->next->content);
 	free_list(stack_a);
 	return (0);
