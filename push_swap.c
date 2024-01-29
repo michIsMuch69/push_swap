@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 15:45:11 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:58:17 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	//get_chunks_indexes(&stack_b);
 	printf("%d\n", stack_b->next->chunk_end);
 
-	chunks_fusion(&stack_a, &stack_b);
+	//chunks_fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");

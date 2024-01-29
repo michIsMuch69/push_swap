@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:18:07 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 15:49:25 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:58:08 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ int	swap(t_list **stack, char stack_name)
 		printf("sb\n");
 	return (0);
 }
+
 
