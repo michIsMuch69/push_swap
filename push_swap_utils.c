@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:18:07 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/25 15:45:40 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/29 13:02:24 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,13 @@ int	ft_atoi(const char *str)
 	if (res > 2147483647 || res < -2147483648)
 		return (-1);
 	return ((int)res);
+}
+void	swap_nodes_val(t_list *node1, t_list *node2)
+{
+	int	temp;
+	if (node1 == NULL || node2 == NULL)
+		exit(EXIT_FAILURE);
+	temp = node1->content;
+	node1->content = node2->content;
+	node2->content = temp;
 }

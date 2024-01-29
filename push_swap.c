@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/27 12:11:47 by jean-michel      ###   ########.fr       */
+/*   Updated: 2024/01/29 12:48:50 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	print_error(argc, argv);
 	fill_stack(argc, argv, &stack_a);
-	//swap(&stack_a, 'a');
-	//push(&stack_a, &stack_b, 'b');
-	rotate(&stack_a, 'a');
+	// swap(&stack_a, 'a');
+	// push(&stack_a, &stack_b, 'b');
+	// rotate(&stack_a, 'a');
+	// reverse_rotate(&stack_a, 'a');
+	segment_sort_and_push(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");
 	print_stack(stack_b);
 	//printf("%d\n", stack_a->content + stack_a->next->content);
 	free_list(stack_a);
+	free_list(stack_b);
 	return (0);
 }

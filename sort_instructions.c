@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/27 12:56:23 by jean-michel      ###   ########.fr       */
+/*   Updated: 2024/01/29 13:02:51 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int push(t_list **from_stack, t_list **to_stack, char stack_name)
 	to_move->next = *to_stack;
 	*to_stack = to_move;
 	if (stack_name == 'a')
-		printf("sa\n");
+		printf("pa\n");
 	else if (stack_name == 'b')
-		printf("sb\n");
+		printf("pb\n");
 	return (0);
 }
 
@@ -69,9 +69,74 @@ int rotate(t_list **stack, char stack_name)
 	current->next = first;
 	first ->next = NULL;
 	if (stack_name == 'a')
-		printf("sa\n");
+		printf("ra\n");
 	else if (stack_name == 'b')
-		printf("sb\n");
+		printf("rb\n");
 	return (0);
+}
+int	reverse_rotate(t_list **stack, char stack_name)
+{
+	t_list	*before_last;
+	t_list	*current;
+
+	if (stack == NULL || (*stack)->next == NULL)
+		return (1);
+	before_last = NULL;	
+	current = *stack;
+	while (current->next != NULL)
+	{
+		before_last = current;
+		current = current->next;
+	}
+	if (before_last != NULL)
+		before_last->next = NULL;
+	current->next = *stack;
+	*stack = current;
+	if (stack_name == 'a')
+		printf("rra\n");
+	else if (stack_name == 'b')
+		printf("rrb\n");
 	return (0);
+}
+
+void	sort_three(t_list **stack_b)
+{
+	t_list *node1;
+	t_list *node2;
+	t_list *node3;
+
+	if (stack_b == NULL || (*stack_b)->next == NULL || (*stack_b)->next->next == NULL)
+		exit (EXIT_FAILURE);
+	node1 = *stack_b;  
+	node2 = (*stack_b)->next;  
+	node3 = (*stack_b)->next->next;
+	if (node1->content > node2->content)
+		swap_nodes_val(node1, node2);
+	rotate(stack_b, 'b');  
+	node2 = *stack_b;
+	node3 = (*stack_b)->next;
+	if (node2->content > node3->content)
+		swap_nodes_val(node2, node3);
+	reverse_rotate(stack_b, 'b');  // 
+	node1 = *stack_b;
+	node2 = (*stack_b)->next;
+	if (node1->content > node2->content)
+		swap_nodes_val(node1, node2);
+}
+void sort_chunk(t_list **chunk)
+{
+	t_list *node1;
+	t_list *node2;
+	
+	node1 = *chunk;
+	node2 = (*chunk)->next;
+	if(ft_lstsize(*chunk) <= 1)
+		return;
+	else if (ft_lstsize(*chunk) ==  2)
+	{
+		if (node1->content > node1->next->content)
+			swap_nodes_val(node1, node2);
+	}
+	else 
+		sort_three(chunk);
 }

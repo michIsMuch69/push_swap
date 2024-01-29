@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/jedusser/Documents/gh_push_swap",
-      "program": "/home/jedusser/Documents/gh_push_swap/a.out",
+      "program": "/home/jedusser/Documents/gh_push_swap/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
