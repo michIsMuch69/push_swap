@@ -6,31 +6,13 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 13:02:51 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:22:18 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	swap(t_list **stack, char stack_name)
-{
-	t_list	*first;
-	t_list	*second;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return (1);
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
-	
-	if (stack_name == 'a')
-		printf("sa\n");
-	else if (stack_name == 'b')
-		printf("sb\n");
-	return (0);
-}
 /* 
 ---to_stack lui-même est un pointeur. 
 Il pointe vers un autre pointeur qui représente le sommet de la pile de destination.
@@ -123,6 +105,7 @@ void	sort_three(t_list **stack_b)
 	if (node1->content > node2->content)
 		swap_nodes_val(node1, node2);
 }
+
 void sort_chunk(t_list **chunk)
 {
 	t_list *node1;
@@ -140,3 +123,5 @@ void sort_chunk(t_list **chunk)
 	else 
 		sort_three(chunk);
 }
+
+

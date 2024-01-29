@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 12:48:50 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:25:00 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ int	main(int argc, char **argv)
 	// rotate(&stack_a, 'a');
 	// reverse_rotate(&stack_a, 'a');
 	segment_sort_and_push(&stack_a, &stack_b);
+	get_chunks_indexes(&stack_b);
+	printf("%d\n", stack_b->next->chunk_end);
+
+	//chunks_fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");
