@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/31 16:01:06 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:03:24 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_list
 	int			push(t_list **from_stack, t_list **to_stack, char stack_name);
 	void		free_list(t_list *stack);
 	void 		sort_chunk(t_list **chunk);
-	void		sort_three(t_list**stack_b);
+	void		sort_three(t_list **stack_b);
 	void		print_error(int argc, char **argv);
 	void		ft_lstadd_back(t_list **lst, t_list *new);
 	void		swap_nodes_val(t_list *node1, t_list *node2, char stack_name);
@@ -43,7 +43,7 @@ typedef struct s_list
 	void 		segment_sort_and_push(t_list **stack_a, t_list **stack_b);
 	t_list		*ft_lstnew(int content);
 	t_list		*ft_lstlast(t_list *lst);
-	void	push_val(t_list** top_ref, int new_value);
+	void		push_val(t_list** top_ref, int new_value);
 
 
 
