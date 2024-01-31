@@ -6,26 +6,12 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 08:55:32 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 12:49:47 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:00:14 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-
-void	push_val(t_list** top_ref, int new_value) 
-{
-   t_list	*new_node; 
-   new_node = (t_list*)malloc(sizeof(t_list));
-    if (new_node == NULL) 
-		exit (EXIT_FAILURE);
-    new_node->content = new_value;
-    new_node->next = (*top_ref);
-    (*top_ref) = new_node;
-}
 
 int	pop(t_list** top_ref) 
 {

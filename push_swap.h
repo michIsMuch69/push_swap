@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 14:45:22 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/31 16:01:06 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@
 typedef struct s_list
 {
 	int				content;
-	int				chunk_end;
 	struct s_list	*next;
-	struct s_list	*previous;
 }	t_list;
 
 	int			pop(t_list** top_ref); 
@@ -39,14 +37,14 @@ typedef struct s_list
 	void 		sort_chunk(t_list **chunk);
 	void		sort_three(t_list**stack_b);
 	void		print_error(int argc, char **argv);
-	void			get_chunks_indexes(t_list **stack_b);
 	void		ft_lstadd_back(t_list **lst, t_list *new);
-	void		swap_nodes_val(t_list *node1, t_list *node2);
+	void		swap_nodes_val(t_list *node1, t_list *node2, char stack_name);
 	void		fill_stack(int argc, char **argv, t_list **lst);
-	void		chunks_fusion(t_list **stack_a, t_list **stack_b);
-	void		segmentAndPush(t_list** stack_a, t_list** stack_b) ;
 	void 		segment_sort_and_push(t_list **stack_a, t_list **stack_b);
 	t_list		*ft_lstnew(int content);
 	t_list		*ft_lstlast(t_list *lst);
+	void	push_val(t_list** top_ref, int new_value);
+
+
 
 #endif

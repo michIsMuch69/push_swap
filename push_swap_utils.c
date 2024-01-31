@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 13:18:07 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 15:58:08 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:59:54 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,33 +47,6 @@ int	ft_atoi(const char *str)
 		return (-1);
 	return ((int)res);
 }
-void	swap_nodes_val(t_list *node1, t_list *node2)
-{
-	int	temp;
-	if (node1 == NULL || node2 == NULL)
-		exit(EXIT_FAILURE);
-	temp = node1->content;
-	node1->content = node2->content;
-	node2->content = temp;
-}
-int	swap(t_list **stack, char stack_name)
-{
-	t_list	*first;
-	t_list	*second;
 
-	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		return (1);
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
-	
-	if (stack_name == 'a')
-		printf("sa\n");
-	else if (stack_name == 'b')
-		printf("sb\n");
-	return (0);
-}
 
 
