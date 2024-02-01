@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dusserrejean-michel <dusserrejean-miche    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/31 16:00:27 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:09:57 by dusserrejea      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void sort_chunk(t_list **chunk)
 		return;
 	else if (ft_lstsize(*chunk) ==  2)
 	{
-		if (node1->content > node1->next->content)
+		if (node1->content < node1->next->content)
 			swap_nodes_val(node1, node2, ' ');
 	}
 	else 

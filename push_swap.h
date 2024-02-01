@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dusserrejean-michel <dusserrejean-miche    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/31 16:03:24 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:25:30 by dusserrejea      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_list
 	t_list		*ft_lstnew(int content);
 	t_list		*ft_lstlast(t_list *lst);
 	void		push_val(t_list** top_ref, int new_value);
+	void		fusion(t_list **stack_a, t_list **stack_b);
 
 
 

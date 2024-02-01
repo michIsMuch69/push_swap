@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dusserrejean-michel <dusserrejean-miche    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/31 15:56:53 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:53:41 by dusserrejea      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,34 @@ void	fill_stack(int argc, char **argv, t_list **stack_a)
 	}
 }
 
+void fusion(t_list **stack_a, t_list **stack_b)
+{
+	t_list *element;
+	int count;
+	
+	count = 0;
+	element = *stack_b;
+	if(*stack_a == NULL || (*stack_b)->content < (*stack_a)->content)
+	{
+		push(stack_b, stack_a, 'a');
+	}
+	else
+	{	
+		while (element->content > (*stack_a)->content && count < ft_lstsize(*stack_a))
+		{
+			rotate(stack_a, 'a');
+			count++;
+		}
+		if(*stack_b)
+			push(stack_b, stack_a, 'a');
+		while (count > 0)
+		{
+			reverse_rotate(stack_a,'a');
+			count++;
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -57,10 +85,12 @@ int	main(int argc, char **argv)
 	print_error(argc, argv);
 	fill_stack(argc, argv, &stack_a);
 	segment_sort_and_push(&stack_a, &stack_b);
+	fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");
 	print_stack(stack_b);
+	printf ("----%d\n", (stack_b)->content);
 	free_list(stack_a);
 	free_list(stack_b);
 	return (0);
