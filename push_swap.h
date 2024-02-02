@@ -24,7 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-	int			pop(t_list** top_ref); 
+	//int			pop(t_list** top_ref); 
 	int			ft_lstsize(t_list *lst);
 	int			ft_atoi(const char *str);
 	int			ft_is_signeddigit(char c);
@@ -45,6 +45,8 @@ typedef struct s_list
 	t_list		*ft_lstlast(t_list *lst);
 	void		push_val(t_list** top_ref, int new_value);
 	void		fusion(t_list **stack_a, t_list **stack_b);
+	t_list *pop(t_list **top_ref);
+
 
 
 

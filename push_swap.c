@@ -86,10 +86,10 @@ int	main(int argc, char **argv)
 	segment_sort_and_push(&stack_a, &stack_b);
 	fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
-	print_stack(stack_a);
+	 print_stack(stack_a);
 	printf("%s\n", "StackB");
-	//print_stack(stack_b);
 	//printf ("----%d\n", (stack_b)->content);
+	print_stack(stack_b);
 	free_list(stack_a);
 	free_list(stack_b);
 	return (0);

@@ -13,24 +13,39 @@
 #include "push_swap.h"
 
 
-int	pop(t_list** top_ref) 
-{
-   	t_list	*top;
+// int	pop(t_list** top_ref) 
+// {
+//    	t_list	*top;
 	
-	int value; 
+// 	int value; 
+//     if (*top_ref == NULL) 
+//         exit(EXIT_FAILURE);
+// 	top = *top_ref;
+//     value = top->content;
+//     *top_ref = top->next;
+//     free(top);
+//     return value;
+// }
+t_list *pop(t_list **top_ref) 
+{
+    t_list *top_node;
+
     if (*top_ref == NULL) 
-        exit(EXIT_FAILURE);
-	top = *top_ref;
-    value = top->content;
-    *top_ref = top->next;
-    free(top);
-    return value;
+    {
+		exit(EXIT_FAILURE);
+    }
+
+    top_node = *top_ref;
+
+    *top_ref = top_node->next;
+
+    return top_node;
 }
 
 void segment_sort_and_push(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
-	int val;
+	t_list *val;
 	t_list *chunk;
 
 	i = 0;
@@ -41,14 +56,14 @@ void segment_sort_and_push(t_list **stack_a, t_list **stack_b)
 		while (i < 3 && *stack_a != NULL)
 		{
 			val = pop(stack_a);
-			push_val(&chunk, val);
+			push(&val, &chunk, ' ');
 			i++;
 		}
 		sort_chunk(&chunk);
 		while (chunk != NULL)
 		{
 			val = pop(&chunk);
-			push_val(stack_b, val);
+			push(&val, stack_b, 'b');
 		}
 	}
 }
