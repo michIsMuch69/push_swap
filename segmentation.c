@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 08:55:32 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 11:13:22 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:45:45 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,31 +40,31 @@ t_list *get_top_elements(t_list **pile, int n)
     return top_elements; 
 }
 
-
 void segment_sort_and_push(t_list **pile_a, t_list **pile_b) 
 {
-	int		i;
-	
+    int i;
+
     while (*pile_a != NULL) 
-	{
-    	t_list	*sub_segment;
-		i = 0;
+    {
         if (ft_lstsize(*pile_a) > 3) 
-		{
-            sub_segment = get_top_elements(pile_a, 3);
-            sort_three(&sub_segment);
-            while (i < 3 && sub_segment != NULL) 
-			{
-                push(&sub_segment, pile_b, 'b');
-				i++;
+        {
+            sort_three(pile_a);
+            i = 0;
+            while (i < 3) 
+            {
+                push(pile_a, pile_b, 'b');
+                i++;
             }
         } 
-		else
-		{
+        else
+        {
             sort_three(pile_a);
             while (*pile_a != NULL) 
+            {
                 push(pile_a, pile_b, 'b');
+            }
         }
     }
 }
+
 
