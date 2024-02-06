@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 14:32:00 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:03:51 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 	t_list  *stack_b;
 	stack_a = NULL;
 	stack_b = NULL;
-	print_error(argc, argv);
+	//print_error(argc, argv);
 	fill_stack(argc, argv, &stack_a);
 	//reverse_rotate(&stack_a, 'a');
 	segment_sort_and_push(&stack_a, &stack_b);
