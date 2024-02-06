@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 10:23:54 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 11:29:58 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 12:11:21 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	check_args(int argc, char **argv)
 {
 	int	i;
 	int	j;
-	long long a;
 
 	i = 1;
 	if (argc == 1)
