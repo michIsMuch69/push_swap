@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 08:17:58 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:03:42 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,7 @@ int push(t_list **from_stack, t_list **to_stack, char stack_name)
 		printf("pb\n");
 	return (0);
 }
-void	push_val(t_list** top_ref, int new_value) 
-{
-   t_list	*new_node; 
-   new_node = (t_list*)malloc(sizeof(t_list));
-    if (new_node == NULL) 
-		exit (EXIT_FAILURE);
-    new_node->content = new_value;
-    new_node->next = (*top_ref);
-    (*top_ref) = new_node;
-}
+
 
 int rotate(t_list **stack, char stack_name)
 {
@@ -91,49 +82,6 @@ int	reverse_rotate(t_list **stack, char stack_name)
 	return (0);
 }
 
-// void	sort_three(t_list **stack_b)
-// {
-// 	t_list *node1;
-// 	t_list *node2;
-// 	t_list *node3;
-
-// 	if (stack_b == NULL || (*stack_b)->next == NULL || (*stack_b)->next->next == NULL)
-// 		exit (EXIT_FAILURE);
-// 	node1 = *stack_b;  
-// 	node2 = (*stack_b)->next;  
-// 	node3 = (*stack_b)->next->next;
-// 	if (node1->content > node2->content)
-// 		swap_nodes_val(node1, node2, 'b');
-// 	rotate(stack_b, 'b');  
-// 	node2 = *stack_b;
-// 	node3 = (*stack_b)->next;
-// 	if (node2->content > node3->content)
-// 		swap_nodes_val(node2, node3, 'b');
-// 	reverse_rotate(stack_b, 'b');  // 
-// 	node1 = *stack_b;
-// 	node2 = (*stack_b)->next;
-// 	if (node1->content > node2->content)
-// 		swap_nodes_val(node1, node2, 'b');
-// }
-
-// void sort_chunk(t_list **chunk)
-// {
-// 	t_list *node1;
-// 	t_list *node2;
-	
-// 	node1 = *chunk;
-// 	node2 = (*chunk)->next;
-// 	if(ft_lstsize(*chunk) <= 1)
-// 		return;
-// 	else if (ft_lstsize(*chunk) ==  2)
-// 	{
-// 		if (node1->content < node1->next->content)
-// 			swap_nodes_val(node1, node2, ' ');
-// 	}
-// 	else 
-// 		sort_three(chunk);
-// }
-
 void sort_three(t_list **stack_b) {
     if (*stack_b == NULL || (*stack_b)->next == NULL || (*stack_b)->next->next == NULL)
         return; 
@@ -147,29 +95,6 @@ void sort_three(t_list **stack_b) {
         swap(stack_b, 'b');
 }
 
-void sort_chunk(t_list **chunk) {
-    if (*chunk == NULL || (*chunk)->next == NULL)
-        return; 
-    int size = ft_lstsize(*chunk);
-    if (size == 2 && (*chunk)->content > (*chunk)->next->content) 
-        swap(chunk, ' ');
-	else if (size >= 3)
-        sort_three(chunk);
-}
-
-void	swap_nodes_val(t_list *node1, t_list *node2, char stack_name)
-{
-	int	temp;
-	if (node1 == NULL || node2 == NULL)
-		exit(EXIT_FAILURE);
-	temp = node1->content;
-	node1->content = node2->content;
-	node2->content = temp;
-	if (stack_name == 'a')
-		printf("sa\n");
-	else if (stack_name == 'b')
-		printf("sb\n");
-}
 int	swap(t_list **stack, char stack_name)
 {
 	t_list	*first;

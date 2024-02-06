@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 08:16:41 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:28:29 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int	main(int argc, char **argv)
 	fill_stack(argc, argv, &stack_a);
 	segment_sort_and_push(&stack_a, &stack_b);
 	fusion(&stack_a, &stack_b);
-	printf("%s\n", "StackA");
-	print_stack(stack_a);
-	printf("%s\n", "StackB");
-	print_stack(stack_b);
+	// printf("%s\n", "StackA");
+	// print_stack(stack_a);
+	// printf("%s\n", "StackB");
+	// print_stack(stack_b);
 	free_list(stack_a);
-	free_list(stack_b);
+	//free_list(stack_b);
 	return (0);
 }

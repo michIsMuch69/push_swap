@@ -6,65 +6,65 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 08:55:32 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/31 16:00:14 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:13:22 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-// int	pop(t_list** top_ref) 
-// {
-//    	t_list	*top;
-	
-// 	int value; 
-//     if (*top_ref == NULL) 
-//         exit(EXIT_FAILURE);
-// 	top = *top_ref;
-//     value = top->content;
-//     *top_ref = top->next;
-//     free(top);
-//     return value;
-// }
-t_list *pop(t_list **top_ref) 
+t_list *get_top_elements(t_list **pile, int n) 
 {
-    t_list *top_node;
+	int i;
 
-    if (*top_ref == NULL) 
-    {
-		exit(EXIT_FAILURE);
-    }
-
-    top_node = *top_ref;
-
-    *top_ref = top_node->next;
-
-    return top_node;
-}
-
-void segment_sort_and_push(t_list **stack_a, t_list **stack_b)
-{
-	int	i;
-	t_list *val;
-	t_list *chunk;
+    t_list *top_elements = NULL; 
+    t_list *temp_stack = NULL; 
+    t_list *temp;
 
 	i = 0;
-	chunk = NULL;
-	while(ft_lstsize(*stack_a) > 0)
+    while(i < n && *pile != NULL)
 	{
+        temp = *pile; 
+        *pile = (*pile)->next; 
+        temp->next = temp_stack; 
+        temp_stack = temp; 
+		i++;
+    }
+    while (temp_stack != NULL) 
+	{
+        temp = temp_stack; 
+        temp_stack = temp_stack->next; 
+        temp->next = top_elements; 
+        top_elements = temp; 
+    }
+    return top_elements; 
+}
+
+
+void segment_sort_and_push(t_list **pile_a, t_list **pile_b) 
+{
+	int		i;
+	
+    while (*pile_a != NULL) 
+	{
+    	t_list	*sub_segment;
 		i = 0;
-		while (i < 3 && *stack_a != NULL)
+        if (ft_lstsize(*pile_a) > 3) 
 		{
-			val = pop(stack_a);
-			push(&val, &chunk, ' ');
-			i++;
-		}
-		sort_chunk(&chunk);
-		while (chunk != NULL)
+            sub_segment = get_top_elements(pile_a, 3);
+            sort_three(&sub_segment);
+            while (i < 3 && sub_segment != NULL) 
+			{
+                push(&sub_segment, pile_b, 'b');
+				i++;
+            }
+        } 
+		else
 		{
-			val = pop(&chunk);
-			push(&val, stack_b, 'b');
-		}
-	}
+            sort_three(pile_a);
+            while (*pile_a != NULL) 
+                push(pile_a, pile_b, 'b');
+        }
+    }
 }
 
