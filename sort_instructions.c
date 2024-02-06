@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 08:24:47 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 13:46:13 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:40:16 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,17 +82,18 @@ int	reverse_rotate(t_list **stack, char stack_name)
 	return (0);
 }
 
-void sort_three(t_list **stack_b) {
-    if (*stack_b == NULL || (*stack_b)->next == NULL || (*stack_b)->next->next == NULL)
+void sort_three(t_list **stack) 
+{
+    if (*stack == NULL || (*stack)->next == NULL || (*stack)->next->next == NULL)
         return; 
-    if ((*stack_b)->content > (*stack_b)->next->content)
-        swap(stack_b, 'b');
-    rotate(stack_b, 'b'); 
-    if ((*stack_b)->content > (*stack_b)->next->content)
-        swap(stack_b, 'b');
-    reverse_rotate(stack_b, 'b'); 
-    if ((*stack_b)->content > (*stack_b)->next->content) 
-        swap(stack_b, 'b');
+    if ((*stack)->content > (*stack)->next->content)
+        swap(stack, 'a');
+    rotate(stack, 'a'); 
+    if ((*stack)->content > (*stack)->next->content)
+        swap(stack, 'a');
+    reverse_rotate(stack, 'a'); 
+    if ((*stack)->content > (*stack)->next->content) 
+        swap(stack, 'a');
 }
 
 int	swap(t_list **stack, char stack_name)
