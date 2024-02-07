@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jean-micheldusserre <jean-micheldusserr    +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 18:40:32 by jean-michel      ###   ########.fr       */
+/*   Updated: 2024/02/07 10:52:56 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,47 +48,23 @@ void	fill_stack(int argc, char **argv, t_list **stack_a)
 	}
 }
 
-// void fusion(t_list **stack_a, t_list **stack_b)
-// {
-//     int count;
-
-//     while (*stack_b != NULL)
-//     {
-//         count = 0; 
-//         if (*stack_a == NULL || (*stack_b)->content < (*stack_a)->content)
-//             push(stack_b, stack_a, 'a'); 
-//         else
-//         {
-//             while (*stack_a && (*stack_b)->content > (*stack_a)->content && count < ft_lstsize(*stack_a))
-//             {
-//                 rotate(stack_a, 'a');
-//                 count++;
-//             }
-//             push(stack_b, stack_a, 'a'); 
-//             while (count > 0)
-//             {
-//                 reverse_rotate(stack_a, 'a');
-//                 count--;
-//             }
-//         }
-//     }
-// }
-
-
-
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list  *stack_b;
+	int size;
+
 	stack_a = NULL;
 	stack_b = NULL;
+	
 	//print_error(argc, argv);
 	fill_stack(argc, argv, &stack_a);
+	size = ft_lstsize(stack_a);
 	//reverse_rotate(&stack_a, 'a');
 	segment_sort_and_push(&stack_a, &stack_b);
 	// swap(&stack_b, 'b');
 	// push(&stack_b, &stack_a, 'a');
-	fusion(&stack_a, &stack_b);
+	//fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");

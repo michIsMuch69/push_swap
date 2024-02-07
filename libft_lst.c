@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:42:40 by jedusser          #+#    #+#             */
-/*   Updated: 2024/01/29 11:53:43 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/07 08:47:14 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ t_list	*ft_lstnew(int content)
 	list->content = content;
 	return (list);
 }
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	new->next = *lst;
+	*lst = new;
+}
+
 
 t_list	*ft_lstlast(t_list *lst)
 {

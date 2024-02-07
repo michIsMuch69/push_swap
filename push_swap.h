@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dusserrejean-michel <dusserrejean-miche    +#+  +:+       +#+        */
+/*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 07:48:13 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/01 10:25:30 by dusserrejea      ###   ########.fr       */
+/*   Updated: 2024/02/07 10:47:30 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_list
 	void 		segment_sort_and_push(t_list **stack_a, t_list **stack_b);
 	t_list		*ft_lstnew(int content);
 	t_list		*ft_lstlast(t_list *lst);
+	void		ft_lstadd_front(t_list **lst, t_list *new);
 	void		push_val(t_list** top_ref, int new_value);
 	void		fusion(t_list **stack_a, t_list **stack_b);
 	t_list *pop(t_list **top_ref);

@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 08:55:32 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/06 15:52:22 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/07 10:55:26 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,4 @@ void segment_sort_and_push(t_list **stack_a, t_list **stack_b)
         }
     }
 }
+// pas reconnu par le visualize.
