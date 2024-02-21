@@ -6,7 +6,7 @@
 /*   By: jedusser <jedusser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:28:50 by jedusser          #+#    #+#             */
-/*   Updated: 2024/02/07 10:52:56 by jedusser         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:32:51 by jedusser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	segment_sort_and_push(&stack_a, &stack_b);
 	// swap(&stack_b, 'b');
 	// push(&stack_b, &stack_a, 'a');
-	//fusion(&stack_a, &stack_b);
+	fusion(&stack_a, &stack_b);
 	printf("%s\n", "StackA");
 	print_stack(stack_a);
 	printf("%s\n", "StackB");
